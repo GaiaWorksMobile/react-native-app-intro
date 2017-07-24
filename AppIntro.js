@@ -55,7 +55,7 @@ const defaulStyles = {
     fontWeight: 'bold',
   },
   dotStyle: {
-    backgroundColor: 'rgba(255,255,255,.3)',
+    backgroundColor: 'rgba(255,255,255,.7)',
     width: 13,
     height: 13,
     borderRadius: 7,
@@ -115,6 +115,10 @@ export default class AppIntro extends Component {
       nextOpacity: new Animated.Value(1),
       parallax: new Animated.Value(0),
     };
+  }
+
+  onGetPageIndex() {
+    return this.imagePageIndex;
   }
 
   onNextBtnClick = (context) => {
@@ -188,6 +192,7 @@ export default class AppIntro extends Component {
   renderPagination = (index, total, context) => {
     let isDoneBtnShow;
     let isSkipBtnShow;
+    this.imagePageIndex = index;
     if (index === total - 1) {
       this.setDoneBtnOpacity(1);
       this.setSkipBtnOpacity(0);
@@ -202,7 +207,7 @@ export default class AppIntro extends Component {
       isSkipBtnShow = true;
     }
     return (
-      <View style={[this.styles.paginationContainer]}>
+      <View style={[this.styles.paginationContainer, { bottom : (this.props.pagination != undefined) ? this.props.pagination : 25 }]}>
         {this.props.showSkipButton ? <SkipButton
           {...this.props}
           {...this.state}
@@ -285,6 +290,9 @@ export default class AppIntro extends Component {
 
   render() {
     const childrens = this.props.children;
+    if (!childrens) {
+      return null;
+    }
     const { pageArray } = this.props;
     let pages = [];
     let androidPages = null;
