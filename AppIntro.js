@@ -55,9 +55,9 @@ const defaulStyles = {
     fontWeight: 'bold',
   },
   dotStyle: {
-    backgroundColor: 'rgba(255,255,255,.7)',
-    width: 13,
-    height: 13,
+    backgroundColor: 'rgba(255,255,255,.24)',
+    width: 9,
+    height: 9,
     borderRadius: 7,
     marginLeft: 7,
     marginRight: 7,
