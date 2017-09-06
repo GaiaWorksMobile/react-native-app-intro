@@ -13,7 +13,7 @@ export const SkipButton = ({
   skipFadeOpacity
 }) => {
   return (
-    <View style={[styles.btnContainer, {
+    <View style={[styles.btnContainer, { right: 30 },{
         paddingBottom: 5,
         opacity: isSkipBtnShow ? 1 : 0,
       }]}>

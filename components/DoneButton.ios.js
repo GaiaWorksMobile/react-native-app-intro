@@ -14,7 +14,7 @@ export const DoneButton = ({
 }) => {
   return (
     <View style={styles.btnContainer}>
-      <Animated.View style={[styles.full, { height: 0 }, {
+      <Animated.View style={[styles.full, { height: 0 }, { left: 30 }, {
         opacity: doneFadeOpacity,
         transform: [{
           translateX: skipFadeOpacity.interpolate({
