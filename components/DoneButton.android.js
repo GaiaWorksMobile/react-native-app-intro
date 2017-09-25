@@ -13,10 +13,10 @@ export const DoneButton = ({
   return (
     <View style={[styles.btnContainer, { height: 0, paddingBottom: 5 }, { left: 30 },]}>
       <TouchableOpacity style={styles.full}
-        onPress={ isDoneBtnShow ? onDoneBtnClick : onNextBtnClick}
+        onPress={ isDoneBtnShow ? onDoneBtnClick : null}
       >
        <Text style={[styles.nextButtonText, { color: rightTextColor }]}>
-         {isDoneBtnShow ? doneBtnLabel : nextBtnLabel}
+         {isDoneBtnShow ? doneBtnLabel : null}
        </Text>
       </TouchableOpacity>
     </View>
