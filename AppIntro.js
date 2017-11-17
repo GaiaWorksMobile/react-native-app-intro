@@ -190,6 +190,10 @@ export default class AppIntro extends Component {
   }
 
   renderPagination = (index, total, context) => {
+
+    if(!this.props.guide) {
+          return null;
+      }
     let isDoneBtnShow;
     let isSkipBtnShow;
     this.imagePageIndex = index;
@@ -328,6 +332,7 @@ export default class AppIntro extends Component {
           loop={false}
           index={this.props.defaultIndex}
           renderPagination={this.renderPagination}
+          guide={this.props.guide}
           onMomentumScrollEnd={(e, state) => {
             this.props.onSlideChange(state.index, state.total);
           }}
